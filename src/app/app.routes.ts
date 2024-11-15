@@ -35,6 +35,14 @@ export const routes: Routes = [
 
 
     }
+    ,
+    // {
+    //     path: 'forgot-password',
+    //     pathMatch: 'full',
+    //     // component: ForgotPassword
+
+
+    // }
 
 
 

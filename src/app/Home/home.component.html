@@ -1,14 +1,77 @@
-<app-header></app-header>
-<!-- <header>
-    <div>
-        <img src="" alt="logo">
-        <div></div>
-        <div></div>
-    </div>
+<div class="page-container">
 
+    <app-header></app-header>
+
+    <app-simple-header></app-simple-header>
+    <!-- <header>
+        <div>
+            <img src="" alt="logo">
+            <div></div>
+            <div></div>
+    </div>
+    
 </header> -->
 
-home works
+
+    <div class="container">
+        <!-- <div class="container"> -->
+        <!-- dividio en 2 partes principales: filtros y listado de evnet-card -->
+        <div class="search">
+            <mat-form-field>
+
+                <mat-label>Genero favorito</mat-label>
+                <mat-select [formControl]="currentGenre">
+                    <!-- <mat-option value="0">pop</mat-option>
+                    <mat-option value="1">rock</mat-option> -->
+
+                    <!-- para poner 0 en numerico usar entre corchhetes el value::::: -->
+                    <mat-option [value]="0">Todos</mat-option>
 
 
-<app-footer></app-footer>
+
+                    @for (item of genres; track item.id) {
+                    <mat-option [value]="item.id">{{item.name}} </mat-option>
+
+                    }
+
+
+                    <!-- @for (item of genres; track item.id) {
+                    <div>asdasd</div>
+                    <mat-option></mat-option>
+                    } -->
+
+                </mat-select>
+            </mat-form-field>
+
+            <span appGihghlightable>Selecciona tu género musical favorito</span>
+
+        </div>
+        <div class="list">
+            @for (concert of concerts; track concert.id) {
+
+            <app-event-card appGihghlightable [data]="concert"></app-event-card>
+
+
+            }
+            @empty {
+            <h3>No se encontraron conciertos</h3>
+            }
+
+            <!-- <app-event-card></app-event-card>
+            <app-event-card></app-event-card>
+            <app-event-card></app-event-card>
+            <app-event-card></app-event-card>
+            <app-event-card></app-event-card>
+            <app-event-card></app-event-card>
+            <app-event-card></app-event-card> -->
+
+        </div>
+    </div>
+
+    <!-- </div> -->
+
+
+
+
+    <app-footer></app-footer>
+</div>

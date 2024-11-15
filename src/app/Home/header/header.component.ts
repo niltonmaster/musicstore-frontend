@@ -26,6 +26,9 @@ export class HeaderComponent {//implements OnInit {
     // const a = new Observable<string>();
     // const b: Observable<string> = a;
 
+    console.log('ctor header')
+
+
 
     this.headerService.searchValue$ = this.searchBarFormControl.valueChanges.pipe(
       map((valor) => {
@@ -33,6 +36,7 @@ export class HeaderComponent {//implements OnInit {
           valor ? //EXISTE!!!! esto significa que el valor NO ES NULL | UNDEFINED
             valor : ''
 
+        console.log('header searchValue$')
         return valor;
       }
 

@@ -5,11 +5,14 @@ header {
     display: flex;
     justify-content: center;
 
+    /* border: 2px solid white; */
+
     & .container {
         width: 1000px;
         /* background-color: blue; */
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        /* space-around; */
         align-items: center;
 
         & .logo-container {

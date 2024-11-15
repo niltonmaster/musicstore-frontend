@@ -1,0 +1,83 @@
+.page-containerx {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
+    & .title-container {
+        /* margin-left: 100px; */
+        display: flex;
+        justify-content: center;
+        /* border: 2px solid green; */
+
+        & .title-ingresa {
+            /* margin-top: 40px; */
+            /* border: 2px solid red; */
+            width: 1000px;
+            font-weight: 500;
+        }
+    }
+
+    & .content-container {
+        /* border: 2px solid yellow; */
+        /* & .card2 {
+            border: 2px solid rgb(68, 0, 255);
+            } */
+
+        /* border: 2px solid rgb(255, 102, 0); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .card {
+            background-color: var(--secondary-color);
+            width: 270px;
+            border-radius: 8px;
+            & .form-title-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 40px;
+                margin-bottom: 40px;
+
+                & .title {
+                    color: var(--primary-color);
+                    font-weight: 500;
+                }
+            }
+
+            & form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & .forgot-password {
+                    color: var(--accent-color);
+                    font-size: 12px;
+
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    span {
+                        cursor: pointer;
+                    }
+                }
+
+                & .email {
+                    margin-bottom: 10px;
+                }
+
+                & .register {
+                    color: white;
+
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+
+                    font-size: 12px;
+                    & .text-link {
+                        color: var(--accent-color);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<!-- <p>event-card works!</p> -->
+<!--  -->
+
+
+<div class="event-container box-shadow">
+    <!-- 3 partes -->
+
+    <div class="superior">
+        <div class="date-time-container">
+            <span class="date">{{data.dateEvent}}</span>
+            <span class="time">{{data.timeEvent}} </span>
+        </div>
+        <div class="genre-container">
+            <span>ROCK</span>
+        </div>
+    </div>
+
+    <div class="centro">
+        <!-- <img src="images/generic-concert-poster.jpg" alt="event-image" />  -->
+
+
+        <!-- <img src="images/generic-concert-poster.jpg" alt="event-image"> -->
+        <img [src]="data.imageUrl" alt="event-image">
+
+
+        <!-- <img src="svg/twitter.svg" alt="twitter"> -->
+
+
+    </div>
+
+    <div class="inferior">
+        <span class="inf-1">{{data.description| textLimiter: 40 }}</span>
+
+        <span class="inf-2">{{data.place| textLimiter:24}}</span>
+
+    </div>
+
+</div>
