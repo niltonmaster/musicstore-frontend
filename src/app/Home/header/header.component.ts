@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { HeaderService } from './header.service';
 import { map, Observable } from 'rxjs';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -19,6 +20,8 @@ export class HeaderComponent {//implements OnInit {
   searchBarFormControl = new FormControl('');
   headerService = inject(HeaderService);
 
+  authService = inject(AuthService)
+
   /**
    *
    */
@@ -29,6 +32,15 @@ export class HeaderComponent {//implements OnInit {
     console.log('ctor header')
 
 
+
+    const token = localStorage.getItem('token');
+    /*if (token) {
+      console.log('existe toke header')
+      this.authService.jwtDecode()
+    }
+    else {
+      console.log('no existe token header')
+    }*/
 
     this.headerService.searchValue$ = this.searchBarFormControl.valueChanges.pipe(
       map((valor) => {
@@ -47,7 +59,7 @@ export class HeaderComponent {//implements OnInit {
 
     );
 
-    console.log('asdas', this.headerService.searchValue$)
+    // console.log('asdas', this.headerService.searchValue$)
   }
 
   /*

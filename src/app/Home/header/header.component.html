@@ -11,10 +11,26 @@
             <input type="text" placeholder="Buscar..." [formControl]="searchBarFormControl" />
         </div>
         <div class="buttons-container">
+
+
+            {{authService.rol()}}
+            @if (authService.isLoggedIn()) {
+
+
+            <!-- <button routerLink="/menu" routerLinkActive="router-link-active" mat-button class="primary">MENU</button> -->
+            <button [routerLink]="this.authService.rol()==='Administrator' ? '/admin': '/customer' "
+                routerLinkActive="router-link-active" mat-button class="primary">MENU</button>
+
+            <button (click)="authService.logout()" routerLinkActive="router-link-active" mat-button
+                class="accent">CERRAR SESION</button> }
+
+            @else {
             <button routerLink="/login" routerLinkActive="router-link-active" mat-button
                 class="primary">INGRESAR</button>
             <button routerLink='/register' routerLinkActive="router-link-active" mat-button
                 class="accent">REGISTRATE</button>
+            }
+
 
         </div>
     </div>

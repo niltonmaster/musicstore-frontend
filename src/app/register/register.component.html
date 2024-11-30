@@ -1,1 +1,135 @@
-<p>register works!</p>
+<div class="page-containerx">
+    <app-simple-header></app-simple-header>
+    <div class="title-container">
+        <div class="title-ingresa">
+            <span>Registrate, ingresa tus datos</span>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <!-- <div class="card2">asdasdasd
+        </div> -->
+        <div class="card box-shadow">
+            <div class="form-title-container">
+                <!-- 111 -->
+                <div>1232</div>
+                <span class="title">INICIO DE SESIÓN</span>
+            </div>
+            <form [formGroup]="registerForm">
+
+                <!-- Nombres -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombres</mat-label>
+                    <input matInput type="text" formControlName="firstName" />
+                    <mat-error>Nombres es requerido</mat-error>
+
+                </mat-form-field>
+
+
+                <mat-form-field class="apellidoxzzzz" appearance="outline">
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput type="text" formControlName="lastName" />
+                    <mat-error>Apellido es requerido</mat-error>
+
+                </mat-form-field>
+
+
+                <!-- ----------------------------------- -->
+                <mat-form-field class="emailxxxx" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="email" />
+
+                    @if(registerForm.controls.email.hasError('required')){
+                    <mat-error>Email es requerido</mat-error>
+                    }
+
+                    @if(registerForm.controls.email.hasError('email')){
+                    <mat-error>Ingrese un email valido</mat-error>
+                    }
+                </mat-form-field>
+                <!-- ----------------------------------- -->
+
+
+
+                <mat-form-field class="age" appearance="outline">
+                    <mat-label>Edad</mat-label>
+                    <input matInput type="number" formControlName="age" />
+                    <mat-error>Edad es requerido</mat-error>
+
+                </mat-form-field>
+
+
+                <!-- -------------------------------- -->
+                <mat-form-field class="passwordx" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password"
+                        [formControl]="registerForm.controls.password" />
+
+                    @if(registerForm.controls.password.hasError('required')){
+                    <mat-error>Contraseña es requerido</mat-error>
+                    }
+
+                    @if(registerForm.controls.password.hasError('minlength')){
+                    <mat-error>Ingrese 8 caracteres como mínimo</mat-error>
+                    }
+
+                </mat-form-field>
+                <!-- ----------------------------------- -->
+
+
+
+
+
+                <mat-form-field class="documentType" appearance="outline">
+                    <mat-label>Documento</mat-label>
+                    <!-- <mat-select [formControl]="currenDocument" formControlName="documentType"> -->
+                    <mat-select formControlName="documentType">
+
+                        <mat-option [value]="0">DNI</mat-option>
+                        <mat-option [value]="1">CE</mat-option>
+                        <mat-option [value]="2"> PASAPORTE</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+
+
+
+                <mat-form-field class="documentNumber" appearance="outline">
+                    <mat-label>Nro documento</mat-label>
+                    <input matInput type="text" formControlName="documentNumber" />
+                    <mat-error>Documento es requerido</mat-error>
+
+                </mat-form-field>
+
+
+
+
+                <button [disabled]="registerForm.invalid" class="box-shadow" (click)="register()"
+                    mat-flat-button>REGISTRAR</button>
+                <div class="register">
+                    <span>Si tienes una cuenta
+                        <span routerLink="/login" class="text-link">ingresa
+                        </span>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    {{registerForm.controls.email.errors|json}}
+
+    {{registerForm.valid|json}}
+
+
+    <!-- {{loginForm.controls.password.errors|json}}
+    <br>
+
+    {{loginForm.controls.email.errors|json}}
+    {{loginForm.controls.email.hasError('required') |json}}
+    {{loginForm.controls.email.hasError('email') |json}} -->
+
+
+
+    <app-footer></app-footer>
+</div>

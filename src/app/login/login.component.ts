@@ -4,11 +4,13 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from "../shared/components/footer/footer.component";
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { catchError, EMPTY, pipe } from 'rxjs';
-// import { JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
+
+import { jwtDecode } from "jwt-decode";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,7 @@ import { catchError, EMPTY, pipe } from 'rxjs';
   imports: [SimpleHeaderComponent, MatFormFieldModule, MatInputModule, MatButtonModule, FooterComponent,
     FooterComponent, RouterLink,
     ReactiveFormsModule,
-    // JsonPipe
+    JsonPipe
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -24,6 +26,9 @@ import { catchError, EMPTY, pipe } from 'rxjs';
 export class LoginComponent {
 
   authService = inject(AuthService);
+
+  router = inject(Router)
+
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -56,6 +61,34 @@ export class LoginComponent {
         //IMPORANTE: AQUI SOLO ENTRA CUANDO LA RESPUESTA ES CORRECTA, SI LAS CREDENCIALES SON INCORRECTA NO ENTRA AQUI
         console.log('respuesta: ', response.data.token)
         localStorage.setItem('token', response.data.token)
+
+
+        console.log('jwtdecode ', jwtDecode(response.data.token))
+
+
+        //DECODIFICAR TOKEN TRASLADADO A UN METODO DENTO DEL SERVICIO DE AUTH
+        /*
+        const jwtDecoded: any = jwtDecode(response.data.token);
+        const name = jwtDecoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name']
+
+        const role = jwtDecoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']
+
+        console.log('name', name)
+        console.log('role', role)
+
+        this.authService.name.set(name)
+        this.authService.rol2.set(role)
+        this.authService.isLoggedIn.set(true);*/
+
+        this.authService.jwtDecode();
+
+        const nextRoute = this.authService.rol() == "Administrator" ? '/admin' : '/customer';
+
+
+
+        alert('inicio de sesipon correcto')
+        this.router.navigate([nextRoute])//(['/home'])
+
       });
   }
 
