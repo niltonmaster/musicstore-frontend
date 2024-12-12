@@ -34,28 +34,34 @@ export class ForgotPasswordComponent {
   matDialog = inject(MatDialog)
 
 
-  loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)])
+
+
+  // loginForm = new FormGroup({
+  //   email: new FormControl('', [Validators.required, Validators.email]),
+  //   password: new FormControl('', [Validators.required, Validators.minLength(8)])
 
 
 
 
-  })
+  // })
 
 
   sendToken(email: string) {
     console.log('email enviado', email)
-    this.matDialog.open(ResetPasswordDialogComponent);
+    this.matDialog.open(ResetPasswordDialogComponent, {
+      data: { email }
+    });
 
-    // return;
+
+    //TODO 
+    /*
     this.authService.sendToken(email).subscribe(() => {
       alert('token enviado')
 
       //logica para abrir modal
 
 
-    })
+    })*/
 
 
 

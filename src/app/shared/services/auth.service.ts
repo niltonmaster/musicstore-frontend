@@ -2,7 +2,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { catchError, EMPTY } from 'rxjs';
-import { LoginApiResponse, RegisterRequestBody } from '../models/auth.model';
+import { LoginApiResponse, RegisterRequestBody, ResetPasswordApiResponse, ResetPasswordRequestBody } from '../models/auth.model';
 import { jwtDecode } from 'jwt-decode';
 
 
@@ -109,7 +109,7 @@ export class AuthService {
   register(body: RegisterRequestBody) {
     console.log('body request authservice', body)
 
-    return this.http.post<LoginApiResponse>(this.baseUrl + 'users/register',
+    return this.http.post<ResetPasswordApiResponse>(this.baseUrl + 'users/register',
 
       body
 
@@ -137,7 +137,26 @@ export class AuthService {
         )
   */
 
+
+
   }
+
+  resetPassowrd(body: ResetPasswordRequestBody) {
+    return this.http.post<LoginApiResponse>(this.baseUrl + "users/ResetPassword",
+      body
+    )
+
+      //cae cuando retorna cualquier respuesta diferete a Ok , cualquier error INCLUSO que retorne del mismo servicio PROCESADO.
+
+      .pipe(
+        catchError((error) => {
+          console.log('error' + error.error.errorMessage);
+          return EMPTY;
+        })
+      )
+
+  }
+
 
 
 }

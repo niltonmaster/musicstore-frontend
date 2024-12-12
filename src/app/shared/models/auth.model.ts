@@ -11,7 +11,6 @@ export interface LoginApiResponse {
 }
 
 
-//no estoy bien pa pero bueno
 export interface RegisterRequestBody {
     documentNumber: string;
     firstName: string;
@@ -21,4 +20,20 @@ export interface RegisterRequestBody {
     documentType: string;
     age: number;
     confirmPassword: string;
+}
+
+
+//MODEL PARA MODAL RESET-PASSWORD
+export interface ResetPasswordRequestBody {
+    newPassword: string;
+    token: string;
+    email: string;
+    confirmNewPassword: string;
+
+}
+//importante para tener el formato de response de este metodo. se prueba en postamb en caso OK y ERROR
+export interface ResetPasswordApiResponse {
+    success: boolean;
+    errorMessage: string;
+
 }
