@@ -1,3 +1,4 @@
+import { appConfig } from '../../app.config';
 export interface Concert {
     id: number;
     title: string;
@@ -14,4 +15,19 @@ export interface Concert {
     finalized: boolean;
     status: string;
 
+}
+
+//para respuesta de concierto por ID
+export interface GetConcertByIdApiResponse {
+
+    data: Concert;
+    success: boolean;
+    errorMessage: string;
+}
+
+
+export interface BuyTicketApiResponse {
+    data: number,
+    success: boolean,
+    errorMessage: string
 }

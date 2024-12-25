@@ -1,0 +1,96 @@
+<div class="page-container">
+
+    <app-logged-in-header></app-logged-in-header>
+
+
+
+
+
+    <!-- //CONTENIDO EVENTO DETALLE -->
+
+    <!-- <div>
+        <span>Compra tus entradas y disfruta!</span>
+    </div> -->
+
+    <div class="container">
+
+
+        <section style="max-width: 1000px; width:100%;font-size:16px; font-weight:500;
+        margin-top:40px; margin-bottom:60px">
+            <span>Compra tus entradas y disfruta!</span>
+        </section>
+
+        <section style="max-width: 1000px;width:100%;display:flex">
+
+            <!-- IMPORTANTE ESTE @IF ES PARA QUE RENDERZE CUANDO EXISTA EL CONCIERTO Y ASI EVITAR ERROR EN LA CONSOLA DE LA PAGINA -->
+            @if(concert){
+
+            <app-event-card appGihghlightable [data]="concert">
+            </app-event-card>
+
+            <div style="width: 750px; height: 360px;background-color: var(--secondary-color);
+            margin-left:30px; display: flex; flex-direction:column; justify-content: space-between;">
+
+                <div style="margin:20px">
+                    <span style="color:  var(--primary-color);
+                    font-weight: 500;
+                    font-size: 16px;">
+                        Acerca del evento</span>
+
+                    <br />
+                    <br />
+                    <p style="color:white">{{concert.extendedDescription| textLimiter:700}}</p>
+
+
+                </div>
+
+
+
+                <!-- </div> -->
+
+
+                <div style="margin:20px; margin-top: 0px;">
+                    <span style="color:white; margin-right:20px; font-size:16pz; font-weight:500">
+                        Precio:
+                        <span style="color: var(--accent-color);">S/ {{concert.unitPrice.toFixed(2)}}</span>
+
+                    </span>
+
+                    <button style="background-color: var(--accent-color);color:white" mat-flat-button color="primary"
+                        (click)="openBuyDialog()">
+                        COMPRAR ENTRADA
+                    </button>
+                </div>
+
+            </div>
+            }
+
+        </section>
+
+
+
+
+
+
+
+        <!-- <div class="panel-container">
+            <div class="heading">
+                <span class="title">Acerca del evento</span>
+                <p class="description">loret ipsum loter ipsum data</p>
+            </div>
+            <div>
+                <span>Precio:<span>S/. 50 </span> </span>
+                <button mat-flat-button>COMPRAR ENTRADA</button>
+            </div>
+        </div> -->
+
+    </div>
+
+    <!-- FIN CONTENIDO EVENTO DETALLE -->
+
+
+
+
+
+    <app-footer></app-footer>
+</div>

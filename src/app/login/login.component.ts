@@ -11,6 +11,7 @@ import { catchError, EMPTY, pipe } from 'rxjs';
 import { JsonPipe } from '@angular/common';
 
 import { jwtDecode } from "jwt-decode";
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-login',
@@ -40,6 +41,10 @@ export class LoginComponent {
   })
 
 
+
+
+  notifications = inject(NotificationsService);
+
   login() {
     // console.log(this.loginForm.value)
 
@@ -49,13 +54,13 @@ export class LoginComponent {
     this.authService.login(email, password)
 
       /*
-      //importante colocar aqui si solo deseo que sea para este compoenent,si no este PIPE colocarlo en 
-        .pipe(
-          catchError((error) => {
-            alert(error.error.errorMessage);
-            return EMPTY;
-          })
-        )*/
+        //importante colocar aqui si solo deseo que sea para este compoenent,si no este PIPE colocarlo en 
+          .pipe(
+            catchError((error) => {
+              alert(error.error.errorMessage);
+              return EMPTY;
+            })
+          )*/
 
       .subscribe((response) => {
         //IMPORANTE: AQUI SOLO ENTRA CUANDO LA RESPUESTA ES CORRECTA, SI LAS CREDENCIALES SON INCORRECTA NO ENTRA AQUI
@@ -81,11 +86,10 @@ export class LoginComponent {
         this.authService.isLoggedIn.set(true);*/
 
         this.authService.jwtDecode();
+        this.notifications.success('Login correcto')
+
 
         const nextRoute = this.authService.rol() == "Administrator" ? '/admin' : '/customer';
-
-
-
         alert('inicio de sesipon correcto')
         this.router.navigate([nextRoute])//(['/home'])
 

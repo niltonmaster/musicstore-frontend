@@ -8,6 +8,7 @@ import { AdminComponent } from './admin/admin.component';
 import { CustomerComponent } from './customer/customer.component';
 import { isLoggedIn } from './app.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 export const routes: Routes = [
     //cada rtua va ser un objeto de JS
@@ -66,6 +67,11 @@ export const routes: Routes = [
 
     }
 
+    , {
+        path: 'event-detail/:id',
+        pathMatch: 'full',
+        component: EventDetailComponent
+    }
     ,
     //PENDIENTE
     {

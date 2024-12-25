@@ -1,0 +1,61 @@
+header {
+    background-color: var(--secondary-color);
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid white; */
+    & .container {
+        width: 1000px;
+        /* background-color: blue; */
+        display: flex;
+        justify-content: space-between;
+        /* space-around; */
+        align-items: center;
+        & .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: purple; */
+            gap: 10px;
+            cursor: pointer;
+
+            & img {
+                height: 50px;
+                width: 50px;
+            }
+
+            & h1 {
+                font-size: 16px;
+                font-weight: 500;
+                color: white;
+                margin: 0px;
+            }
+        }
+
+        & .name-container {
+            /* //NILTON COMPLETAR */
+            color: white;
+            /* //IMPORTANTE ES PARA MODIFICAR DISPLAY BETWEEN  */
+            text-align: right;
+            width: 500px;
+            font-size: 14px;
+        }
+
+        & .buttons-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            & .accent {
+                color: var(--accent-color);
+                /* color: yellow; */
+            }
+            & .primary {
+                color: var(--primary-color);
+
+                /* color: purple; */
+            }
+        }
+    }
+}

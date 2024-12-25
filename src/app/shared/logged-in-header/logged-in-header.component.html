@@ -1,0 +1,45 @@
+<header class="box-shadow">
+    <!-- div unico centrado -->
+    <div class="container">
+        <!-- 3 divs en horizonal: -->
+
+        <div class="logo-container" routerLink="/home">
+            <img src="images/logo.png" alt="logo">
+            <h1>MUSICAL EVENTS</h1>
+        </div>
+        <!-- <div class="name-container">
+            <span>{{authService.name() +"-" +authService.role() }} </span>
+        </div> -->
+
+
+        <div class="name-container">
+            <span>{{authService.name() +"-" +authService.rol() }} </span>
+        </div>
+
+
+        <!-- IMPORTANTE ESTA CLASE BUTTONS-CONTAINER ES PARA 2 BOTONES TANTO EN LOGGEDIN Y NO. POR ESO LO DEJO AFUERA DE LA CONDICIONAL -->
+        <div class="buttons-container">
+
+            <!-- {{authService.rol()}} -->
+            @if (authService.isLoggedIn()) {
+
+
+            <button [routerLink]="this.authService.rol()==='Administrator' ? '/admin': '/customer' "
+                routerLinkActive="router-link-active" mat-button class="primary"> MENU
+            </button>
+            <button (click)="authService.logout()" routerLinkActive="router-link-active" mat-button
+                class="accent">CERRAR SESION
+            </button>
+            }
+            @else {
+            <button routerLink="/login" routerLinkActive="router-link-active" mat-button
+                class="primary">INGRESAR</button>
+            <button routerLink='/register' routerLinkActive="router-link-active" mat-button
+                class="accent">REGISTRATE</button>
+            }
+
+
+        </div>
+    </div>
+
+</header>

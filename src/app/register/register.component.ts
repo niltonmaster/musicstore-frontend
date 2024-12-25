@@ -10,6 +10,7 @@ import { AuthService } from '../shared/services/auth.service';
 import { MatSelectModule } from '@angular/material/select';
 import { RegisterRequestBody } from '../shared/models/auth.model';
 import { JsonPipe } from '@angular/common';
+import { NotificationsService } from 'angular2-notifications';
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -29,6 +30,9 @@ export class RegisterComponent {
   authService = inject(AuthService);
 
   router = inject(Router)
+
+  notificationsService = inject(NotificationsService)
+
 
   registerForm = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
@@ -58,7 +62,8 @@ export class RegisterComponent {
     console.log('body request', body)
 
     this.authService.register(body).subscribe(() => {
-      alert('registro exitoso');
+      // alert('registro exitoso');
+      this.notificationsService.success('Registro exitoso', 'Logueate para continuar')
       this.router.navigate(['/login'])
 
     })

@@ -12,6 +12,7 @@ import { HeaderService } from './header/header.service';
 import { lastValueFrom } from 'rxjs';
 import { GihghlightableDirective } from '../shared/directives/gihghlightable.directive';
 import { SimpleHeaderComponent } from '../shared/components/simple-header/simple-header.component';
+import { RouterLink } from '@angular/router';
 // import { jwtDecode } from "jwt-decode";
 
 
@@ -19,7 +20,7 @@ import { SimpleHeaderComponent } from '../shared/components/simple-header/simple
   selector: 'app-home',
   standalone: true,
   imports: [HeaderComponent, FooterComponent, EventCardComponent, MatFormFieldModule, MatSelectModule, ReactiveFormsModule,
-    GihghlightableDirective, SimpleHeaderComponent
+    GihghlightableDirective, SimpleHeaderComponent, RouterLink
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

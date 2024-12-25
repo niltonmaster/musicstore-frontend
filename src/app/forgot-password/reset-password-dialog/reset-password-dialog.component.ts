@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AuthService } from '../../shared/services/auth.service';
 import { ResetPasswordRequestBody } from '../../shared/models/auth.model';
 import { Router, RouterModule } from '@angular/router';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-reset-password-dialog',
@@ -23,6 +24,9 @@ export class ResetPasswordDialogComponent {
   //recibir data del principal
   readonly data = inject(MAT_DIALOG_DATA) as { email: string };//para hacer referencia: this.data.email
   // readonly animal = model(this.data.animal);
+
+
+  notificationsService = inject(NotificationsService)
 
 
   verifyPasswords(form: NgForm) {
@@ -71,6 +75,7 @@ export class ResetPasswordDialogComponent {
 
     this.authService.resetPassowrd(body).subscribe((data) => {
       alert('reset ok')
+      this.notificationsService.success('Reset correcto', 'Inicia sesion')
       this.router.navigate(['/login'])
       // this.router.navigate(['/login'])
 

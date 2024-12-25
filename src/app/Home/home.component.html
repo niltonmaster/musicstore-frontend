@@ -2,7 +2,11 @@
 
     <app-header></app-header>
 
-    <app-simple-header></app-simple-header>
+    <!-- IMPORTANTE solo prueba -->
+    <!-- <app-simple-header></app-simple-header> -->
+    <!-- FIN IMPORNTANTE -->
+
+
     <!-- <header>
         <div>
             <img src="" alt="logo">
@@ -49,7 +53,8 @@
         <div class="list">
             @for (concert of concerts; track concert.id) {
 
-            <app-event-card appGihghlightable [data]="concert"></app-event-card>
+            <app-event-card appGihghlightable [data]="concert"
+                [routerLink]="'/event-detail/'+concert.id"></app-event-card>
 
 
             }

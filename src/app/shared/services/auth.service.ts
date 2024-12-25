@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, EMPTY } from 'rxjs';
 import { LoginApiResponse, RegisterRequestBody, ResetPasswordApiResponse, ResetPasswordRequestBody } from '../models/auth.model';
 import { jwtDecode } from 'jwt-decode';
+import { NotificationsService } from 'angular2-notifications';
 
 
 @Injectable({
@@ -22,6 +23,7 @@ export class AuthService {
   // role = '';
   rol = signal('');
   isLoggedIn = signal(false);
+  notificationsService = inject(NotificationsService)
 
 
   constructor() { }
@@ -37,7 +39,8 @@ export class AuthService {
       //importante colocar aqui si solo deseo que sea para este compoenent,si no este PIPE colocarlo en 
       .pipe(
         catchError((error) => {
-          alert(error.error.errorMessage);
+          this.notificationsService.error('Error', error.error.errorMessage)
+          // alert(error.error.errorMessage);
           return EMPTY;
         })
       )
@@ -90,6 +93,7 @@ export class AuthService {
     this.name.set('')
     this.rol.set('')
     this.isLoggedIn.set(false);
+    this.notificationsService.success('Logout exitoso', 'Hasta luego  ')
   }
 
 
@@ -99,7 +103,8 @@ export class AuthService {
     })
       .pipe(
         catchError((error) => {
-          console.log('error' + error.error.errorMessage);
+          // console.log('error' + error.error.errorMessage);
+          this.notificationsService.error('Error', error.error.errorMessage)//IMPORTANTE ESTO SE REPITE EN VARIOS METODS PODRIA PONERSE EN UN INTERCEPTOR
           return EMPTY;
         })
       )
