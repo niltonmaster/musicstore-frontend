@@ -9,6 +9,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { isLoggedIn } from './app.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+import { MyPurchasesComponent } from './customer/my-purchases/my-purchases.component';
+import { ChangePasswordComponent } from './customer/change-password/change-password.component';
 
 export const routes: Routes = [
     //cada rtua va ser un objeto de JS
@@ -54,8 +56,28 @@ export const routes: Routes = [
 
     {
         path: 'customer',
-        pathMatch: 'full',
-        component: CustomerComponent
+        pathMatch: 'prefix',//importante significa que r¿ira mas como customer/xxxxx
+        component: CustomerComponent,
+        children: [
+            {
+                path: '',
+                pathMatch: 'full'
+                , redirectTo: 'my-purchases'
+
+            }
+            ,
+            {
+                path: 'my-purchases',
+                pathMatch: 'full',
+                component: MyPurchasesComponent
+            }, {
+                path: 'change-password',
+                pathMatch: 'full',
+                component: ChangePasswordComponent
+            }
+
+
+        ]
 
 
     }
