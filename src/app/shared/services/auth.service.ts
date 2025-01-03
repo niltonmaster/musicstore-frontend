@@ -5,6 +5,7 @@ import { catchError, EMPTY } from 'rxjs';
 import { LoginApiResponse, RegisterRequestBody, ResetPasswordApiResponse, ResetPasswordRequestBody } from '../models/auth.model';
 import { jwtDecode } from 'jwt-decode';
 import { NotificationsService } from 'angular2-notifications';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -24,6 +25,8 @@ export class AuthService {
   rol = signal('');
   isLoggedIn = signal(false);
   notificationsService = inject(NotificationsService)
+
+  router = inject(Router);
 
 
   constructor() { }
@@ -94,6 +97,10 @@ export class AuthService {
     this.rol.set('')
     this.isLoggedIn.set(false);
     this.notificationsService.success('Logout exitoso', 'Hasta luego  ')
+
+
+
+    this.router.navigate(['/home'])
   }
 
 

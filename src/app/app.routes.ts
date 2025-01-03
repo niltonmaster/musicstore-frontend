@@ -11,6 +11,10 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { MyPurchasesComponent } from './customer/my-purchases/my-purchases.component';
 import { ChangePasswordComponent } from './customer/change-password/change-password.component';
+import { SalesComponent } from './sales/sales.component';
+import { EventsComponent } from './admin/events/events.component';
+import { GenresComponent } from './admin/genres/genres.component';
+import { ReportsComponent } from './admin/reports/reports.component';
 
 export const routes: Routes = [
     //cada rtua va ser un objeto de JS
@@ -48,9 +52,40 @@ export const routes: Routes = [
 
     {
         path: 'admin',
-        pathMatch: 'full',
-        component: AdminComponent
+        pathMatch: 'prefix',
+        component: AdminComponent,
+        children: [
+            {
+                path: '',
+                pathMatch: 'full'
+                , redirectTo: 'sales'
 
+            }
+            ,
+            {
+                path: 'sales',
+                pathMatch: 'full',
+                component: SalesComponent
+            },
+            {
+                path: 'events',
+                pathMatch: 'full',
+                component: EventsComponent
+            }
+            ,
+            {
+                path: 'genres',
+                pathMatch: 'full',
+                component: GenresComponent
+            },
+            {
+                path: 'reports',
+                pathMatch: 'full',
+                component: ReportsComponent
+            }
+
+
+        ]
 
     },
 
