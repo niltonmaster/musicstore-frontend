@@ -34,23 +34,22 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { FormattedDataModel } from './sales.model';
 @Component({
-  selector: 'app-sales',
-  standalone: true,
-  imports: [
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-  ],
-  providers: [provideNativeDateAdapter()],
-  templateUrl: './sales.component.html',
-  styleUrl: './sales.component.css'
+    selector: 'app-sales',
+    imports: [
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatSelectModule,
+        MatCheckboxModule,
+        MatDatepickerModule,
+    ],
+    providers: [provideNativeDateAdapter()],
+    templateUrl: './sales.component.html',
+    styleUrl: './sales.component.css'
 })
 
 

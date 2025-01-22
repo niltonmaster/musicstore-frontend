@@ -7,15 +7,13 @@ import { Options } from 'angular2-notifications'
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, SimpleNotificationsModule
-    , NgxSpinnerModule//IMPORTANTE 3ER PASO PARA IMPORTAR ASI COMO SIMPLENOTIFICATION DE ARRIBA
-  ],///, HomeComponent],
-  // imports: [HomeComponent],
-
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [RouterOutlet, SimpleNotificationsModule,
+        NgxSpinnerModule //IMPORTANTE 3ER PASO PARA IMPORTAR ASI COMO SIMPLENOTIFICATION DE ARRIBA
+    ], ///, HomeComponent],
+    // imports: [HomeComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
   title = 'musical-events';

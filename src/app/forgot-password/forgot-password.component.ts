@@ -14,16 +14,14 @@ import { ResetPasswordDialogComponent } from './reset-password-dialog/reset-pass
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
-  selector: 'app-forgot-password',
-  standalone: true,
-  imports: [SimpleHeaderComponent, MatFormFieldModule, MatInputModule, MatButtonModule, FooterComponent,
-    FooterComponent, RouterLink,
-    FormsModule,
-    // ReactiveFormsModule,//IMPORTANTE AQUI NO USAREMOS REACTIVE FORMSMODULE SINO TEMPLATE
-    JsonPipe],
-
-  templateUrl: './forgot-password.component.html',
-  styleUrl: './forgot-password.component.css'
+    selector: 'app-forgot-password',
+    imports: [SimpleHeaderComponent, MatFormFieldModule, MatInputModule, MatButtonModule, FooterComponent,
+        FooterComponent, RouterLink,
+        FormsModule,
+        // ReactiveFormsModule,//IMPORTANTE AQUI NO USAREMOS REACTIVE FORMSMODULE SINO TEMPLATE
+        JsonPipe],
+    templateUrl: './forgot-password.component.html',
+    styleUrl: './forgot-password.component.css'
 })
 export class ForgotPasswordComponent {
 

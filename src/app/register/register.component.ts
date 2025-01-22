@@ -12,14 +12,13 @@ import { RegisterRequestBody } from '../shared/models/auth.model';
 import { JsonPipe } from '@angular/common';
 import { NotificationsService } from 'angular2-notifications';
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [SimpleHeaderComponent, MatFormFieldModule, MatInputModule, MatButtonModule, FooterComponent,
-    FooterComponent, RouterLink,
-    ReactiveFormsModule, MatSelectModule,
-    JsonPipe],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+    selector: 'app-register',
+    imports: [SimpleHeaderComponent, MatFormFieldModule, MatInputModule, MatButtonModule, FooterComponent,
+        FooterComponent, RouterLink,
+        ReactiveFormsModule, MatSelectModule,
+        JsonPipe],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css'
 })
 export class RegisterComponent {
 

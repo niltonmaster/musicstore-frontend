@@ -4,11 +4,10 @@ import { UpperCasePipe } from '@angular/common';
 import { TextLimiterPipe } from '../../pipes/text-limiter.pipe';
 
 @Component({
-  selector: 'app-event-card',
-  standalone: true,
-  imports: [UpperCasePipe, TextLimiterPipe],
-  templateUrl: './event-card.component.html',
-  styleUrl: './event-card.component.css'
+    selector: 'app-event-card',
+    imports: [UpperCasePipe, TextLimiterPipe],
+    templateUrl: './event-card.component.html',
+    styleUrl: './event-card.component.css'
 })
 export class EventCardComponent implements OnInit {
 

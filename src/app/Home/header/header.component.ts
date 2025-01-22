@@ -7,14 +7,13 @@ import { RouterLink } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [MatButtonModule,
-    ReactiveFormsModule,//para usar observables
-    RouterLink,//para usar directiva RouterLink en html
-  ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+    selector: 'app-header',
+    imports: [MatButtonModule,
+        ReactiveFormsModule, //para usar observables
+        RouterLink, //para usar directiva RouterLink en html
+    ],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.css'
 })
 export class HeaderComponent {//implements OnInit {
   searchBarFormControl = new FormControl('');

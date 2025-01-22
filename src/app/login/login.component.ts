@@ -14,15 +14,14 @@ import { jwtDecode } from "jwt-decode";
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [SimpleHeaderComponent, MatFormFieldModule, MatInputModule, MatButtonModule, FooterComponent,
-    FooterComponent, RouterLink,
-    ReactiveFormsModule,
-    JsonPipe
-  ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+    selector: 'app-login',
+    imports: [SimpleHeaderComponent, MatFormFieldModule, MatInputModule, MatButtonModule, FooterComponent,
+        FooterComponent, RouterLink,
+        ReactiveFormsModule,
+        JsonPipe
+    ],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css'
 })
 export class LoginComponent {
 

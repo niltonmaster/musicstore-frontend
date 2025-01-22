@@ -9,11 +9,10 @@ import { Router, RouterModule } from '@angular/router';
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
-  selector: 'app-reset-password-dialog',
-  standalone: true,
-  imports: [FormsModule, MatInputModule, MatButtonModule, RouterModule],
-  templateUrl: './reset-password-dialog.component.html',
-  styleUrl: './reset-password-dialog.component.css'
+    selector: 'app-reset-password-dialog',
+    imports: [FormsModule, MatInputModule, MatButtonModule, RouterModule],
+    templateUrl: './reset-password-dialog.component.html',
+    styleUrl: './reset-password-dialog.component.css'
 })
 export class ResetPasswordDialogComponent {
 

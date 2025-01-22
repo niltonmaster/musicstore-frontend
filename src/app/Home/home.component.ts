@@ -17,13 +17,12 @@ import { RouterLink } from '@angular/router';
 
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [HeaderComponent, FooterComponent, EventCardComponent, MatFormFieldModule, MatSelectModule, ReactiveFormsModule,
-    GihghlightableDirective, SimpleHeaderComponent, RouterLink
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [HeaderComponent, FooterComponent, EventCardComponent, MatFormFieldModule, MatSelectModule, ReactiveFormsModule,
+        GihghlightableDirective, SimpleHeaderComponent, RouterLink
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
   homrService = inject(HomeService);

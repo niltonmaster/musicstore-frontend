@@ -15,13 +15,12 @@ import { VoucherDialogComponent } from '../shared/voucher-dialog/voucher-dialog.
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
-  selector: 'app-event-detail',
-  standalone: true,
-  imports: [LoggedInHeaderComponent, FooterComponent, FooterComponent,
-    EventCardComponent, MatButtonModule,
-    TextLimiterPipe],
-  templateUrl: './event-detail.component.html',
-  styleUrl: './event-detail.component.css'
+    selector: 'app-event-detail',
+    imports: [LoggedInHeaderComponent, FooterComponent, FooterComponent,
+        EventCardComponent, MatButtonModule,
+        TextLimiterPipe],
+    templateUrl: './event-detail.component.html',
+    styleUrl: './event-detail.component.css'
 })
 export class EventDetailComponent implements OnInit {
 

@@ -4,11 +4,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ConcertService } from '../services/concert.service';
 
 @Component({
-  selector: 'app-voucher-dialog',
-  standalone: true,
-  imports: [],
-  templateUrl: './voucher-dialog.component.html',
-  styleUrl: './voucher-dialog.component.css'
+    selector: 'app-voucher-dialog',
+    imports: [],
+    templateUrl: './voucher-dialog.component.html',
+    styleUrl: './voucher-dialog.component.css'
 })
 export class VoucherDialogComponent implements OnInit {
 

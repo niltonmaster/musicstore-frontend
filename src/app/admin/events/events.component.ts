@@ -9,29 +9,22 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon'
 import { ConcertService } from '../../shared/services/concert.service';
 import { NotificationsService } from 'angular2-notifications';
-// import { Title } from '@angular/platform-browser';
-
-// import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core';
+import { MatTimepickerModule } from '@angular/material/timepicker';
 
 
 
 @Component({
   selector: 'app-events',
-  standalone: true,
-  imports: [MatTabsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule
-    , MatSelectModule, MatButtonModule, CommonModule, MatIconModule
-    , MatDatepickerModule,
-    // ,MatTimepickerModule
-
-
+  imports: [MatTabsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule,
+    MatSelectModule, MatButtonModule, CommonModule, MatIconModule,
+    MatDatepickerModule,
+    , MatTimepickerModule
     // ,MatDatepickerModule, MatInputModule, MatIconModule, and 
-    MatNativeDateModule
-
+    // MatNativeDateModule
   ],
-
   providers: [provideNativeDateAdapter()],
   changeDetection: ChangeDetectionStrategy.OnPush, /*Viva carlitos queso en el mundo al revés*/
   templateUrl: './events.component.html',

@@ -8,15 +8,14 @@ import { ConcertService } from '../../shared/services/concert.service';
 import { Concert } from '../../shared/models/concert.model';
 
 @Component({
-  selector: 'app-buy-dialog',
-  standalone: true,
-  imports: [FormsModule, //form reactivo para control
-    MatButtonModule,//estilo boton 
-    MatFormField,//estilo boton 
-    MatInputModule//estilo input angular
-  ],
-  templateUrl: './buy-dialog.component.html',
-  styleUrl: './buy-dialog.component.css'
+    selector: 'app-buy-dialog',
+    imports: [FormsModule, //form reactivo para control
+        MatButtonModule, //estilo boton 
+        MatFormField, //estilo boton 
+        MatInputModule //estilo input angular
+    ],
+    templateUrl: './buy-dialog.component.html',
+    styleUrl: './buy-dialog.component.css'
 })
 export class BuyDialogComponent {
 
