@@ -31,3 +31,10 @@ export interface BuyTicketApiResponse {
     success: boolean,
     errorMessage: string
 }
+
+
+export interface CreateEventApiResponse {
+    data: number;
+    success: boolean;
+    errorMessage: string;
+}

@@ -19,3 +19,5 @@ export interface SaleApiResponse {
     success: boolean;
     errorMessage: string
 }
+
+

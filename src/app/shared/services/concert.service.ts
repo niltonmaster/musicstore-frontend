@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
-import { BuyTicketApiResponse, GetConcertByIdApiResponse } from '../models/concert.model';
+import { BuyTicketApiResponse, CreateEventApiResponse, GetConcertByIdApiResponse } from '../models/concert.model';
 import { catchError, EMPTY } from 'rxjs';
 import { SaleApiResponse } from '../models/sale.model';
 import { NotificationsService } from 'angular2-notifications';
@@ -79,6 +79,29 @@ export class ConcertService {
           return EMPTY;
         })
       )
+  }
+
+
+
+  createEvent(formData: FormData) {
+    return this.http.post<CreateEventApiResponse>(
+      this.baseUrl + 'concerts/', formData
+
+    )
+      .pipe(
+        catchError((error) => {
+          this.notificationsService.error('Error', error.error.errorMessage)
+          return EMPTY;
+        })
+      )
+
+
+
+
+
+
+
+
   }
 
 }

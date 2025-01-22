@@ -2,6 +2,13 @@
     --mat-option-focus-state-layer-color: red;
 } */
 
+/* IMPORTANTE AQUI IMPORTAR TODOS LOS ESTILOS QIE ESTAN DENTRO DE STYLES/MATERIAL-COMPONENT  */
+
 @import "./material-component/select.css";
 @import "./material-component/outline-text-field.css";
 @import "./material-component/button.css";
+
+/* //importante verificar estilos en component Sales */
+@import "./material-component/checkbox.css";
+@import "./material-component/date-field.css";
+@import "./material-component/table.css";

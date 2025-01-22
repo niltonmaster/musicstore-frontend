@@ -11,7 +11,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { MyPurchasesComponent } from './customer/my-purchases/my-purchases.component';
 import { ChangePasswordComponent } from './customer/change-password/change-password.component';
-import { SalesComponent } from './sales/sales.component';
+import { SalesComponent } from './admin/sales/sales.component';
 import { EventsComponent } from './admin/events/events.component';
 import { GenresComponent } from './admin/genres/genres.component';
 import { ReportsComponent } from './admin/reports/reports.component';

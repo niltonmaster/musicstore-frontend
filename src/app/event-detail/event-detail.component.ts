@@ -57,7 +57,7 @@ export class EventDetailComponent implements OnInit {
 
 
       this.router.navigate(['/login']);
-
+      return;
     }
 
     if (this.authService.rol() == 'Administrator') {
